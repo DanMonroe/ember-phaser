@@ -1,0 +1,1 @@
+export { default } from 'ember-phaser/components/ember-phaser';
