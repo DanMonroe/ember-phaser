@@ -1,42 +1,46 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+// import ENV from 'ember-phaser/config/environment';
 import Phaser from "phaser";
 
 export default class EmberPhaserComponent extends Component {
 
   game = undefined;
 
-  config = {
-    type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
-    parent: 'emberPhaserContainer',
-    physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: { y: 0 },
-        debug: false
-      }
-    },
-    scene: {
-      preload: this.preload,
-      create: this.create
-    },
-    //  Open the Dev Tools
-    //  The version of your game appears after the title in the banner
-    title: 'Ember Phaser',
-    version: '1.0'
-
-    // scene: [BootScene, GameboardScene],
-    // plugins: {
-    //   scene: [{
-    //     key: 'rexBoard',
-    //     plugin: rexBoardPlugin,
-    //     mapping: 'rexBoard'
-    //   }]
-    // },
-    // pixelArt: true
-  };
+  config = undefined;
+  // config = {
+  //   type: Phaser.AUTO,
+  //   width: 600,
+  //   height: 200,
+  //   // width: window.innerWidth,
+  //   // height: window.innerHeight,
+  //   parent: 'emberPhaserContainer',
+  //   physics: {
+  //     default: 'arcade',
+  //     arcade: {
+  //       gravity: { y: 0 },
+  //       debug: false
+  //     }
+  //   },
+  //   scene: {
+  //     preload: this.preload,
+  //     create: this.create
+  //   },
+  //   //  Open the Dev Tools
+  //   //  The version of your game appears after the title in the banner
+  //   title: 'Ember Phaser',
+  //   version: '1.0'
+  //
+  //   // scene: [BootScene, GameboardScene],
+  //   // plugins: {
+  //   //   scene: [{
+  //   //     key: 'rexBoard',
+  //   //     plugin: rexBoardPlugin,
+  //   //     mapping: 'rexBoard'
+  //   //   }]
+  //   // },
+  //   // pixelArt: true
+  // };
 
   preload() {
     console.log('preload');
@@ -44,7 +48,7 @@ export default class EmberPhaserComponent extends Component {
 
   create() {
     console.log('create');
-    const text = this.add.text(80, 550, '', { font: '16px Courier', fill: '#ffffff' });
+    const text = this.add.text(80, 50, '', { font: '16px Courier', fill: '#ffffff' });
 
     text.setText([
       'Game Title: ' + this.game.config.gameTitle,
