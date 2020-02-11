@@ -1,80 +1,34 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-// import ENV from 'ember-phaser/config/environment';
 import Phaser from "phaser";
 
 export default class EmberPhaserComponent extends Component {
 
+  // The Phase game class
   game = undefined;
 
-  config = undefined;
-  // config = {
-  //   type: Phaser.AUTO,
-  //   width: 600,
-  //   height: 200,
-  //   // width: window.innerWidth,
-  //   // height: window.innerHeight,
-  //   parent: 'emberPhaserContainer',
-  //   physics: {
-  //     default: 'arcade',
-  //     arcade: {
-  //       gravity: { y: 0 },
-  //       debug: false
-  //     }
-  //   },
-  //   scene: {
-  //     preload: this.preload,
-  //     create: this.create
-  //   },
-  //   //  Open the Dev Tools
-  //   //  The version of your game appears after the title in the banner
-  //   title: 'Ember Phaser',
-  //   version: '1.0'
-  //
-  //   // scene: [BootScene, GameboardScene],
-  //   // plugins: {
-  //   //   scene: [{
-  //   //     key: 'rexBoard',
-  //   //     plugin: rexBoardPlugin,
-  //   //     mapping: 'rexBoard'
-  //   //   }]
-  //   // },
-  //   // pixelArt: true
-  // };
-
-  preload() {
-    console.log('preload');
-  }
-
-  create() {
-    console.log('create');
-    const text = this.add.text(80, 50, '', { font: '16px Courier', fill: '#ffffff' });
-
-    text.setText([
-      'Game Title: ' + this.game.config.gameTitle,
-      'Version: ' + this.game.config.gameVersion
-    ]);
-  }
+  phaserContainer = 'phaserContainer';
 
   @action
   setup() {
+    this.game = new Phaser.Game(this.args.config);
 
-    this.game = new Phaser.Game(this.config);
+    // This allows us to "inject" an ember service into Phaser classes.
+    // Inside the ember service, you can inject pretty much anything
+    if (this.args.emberGame) {
+      this.game.emberGame = this.args.emberGame;
+    }
 
-    console.log('game', this.game)
-    // new PhaserGame(this.game, element.clientHeight - 68, element.clientWidth);
-
-    if (this.onSetup) {
-      this.onSetup();
+    if (this.args.onSetup) {
+      this.args.onSetup(this.game);
     }
   }
 
   @action
-  teardown(element) {
-    if (this.onTeardown) {
-      this.onTeardown();
+  teardown() {
+    if (this.args.onTeardown) {
+      this.args.onTeardown(this.game);
     }
-
   }
 
 }

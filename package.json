@@ -1,13 +1,13 @@
 {
   "name": "ember-phaser",
-  "version": "0.1.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.2.0",
+  "description": "An ember addon for embedding Phaser3",
   "keywords": [
     "ember-addon"
   ],
   "repository": "https://github.com/DanMonroe/ember-phaser.git",
   "license": "MIT",
-  "author": "",
+  "author": "Dan Monroe",
   "directories": {
     "doc": "doc",
     "test": "tests"
