@@ -1,0 +1,18 @@
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+
+    {{nav.section "Getting started"}}
+    {{nav.item "Installation" "docs.installation"}}
+    {{nav.item "Quickstart" "docs.quickstart"}}
+
+    {{nav.section "Usage"}}
+    {{nav.item "Demo" "docs.usage.demo1"}}
+
+    {{nav.section "Phaser"}}
+    {{nav.item "Phaser3" "docs.phaser"}}
+  </viewer.nav>
+
+  <viewer.main>
+    {{outlet}}
+  </viewer.main>
+</DocsViewer>

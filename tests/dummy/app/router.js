@@ -8,20 +8,11 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function() {
   docsRoute(this, function() {
-    this.route('introduction');
-    this.route('ember-phaser');
-
-    this.route('getting-started', function() {
-      this.route('what-is-ember-phaser');
-      this.route('installation');
-    });
-
-    this.route('configuration', function() {
-      this.route('environment');
-    });
+    this.route('installation');
+    this.route('quickstart');
 
     this.route('usage', function() {
-      this.route('ember-phaser');
+      this.route('demo1');
     });
 
     this.route('phaser');
@@ -29,7 +20,6 @@ Router.map(function() {
 
   this.route('not-found', { path: '/*path' });
 
-  // this.route('phaser');
 });
 
 export default Router;
