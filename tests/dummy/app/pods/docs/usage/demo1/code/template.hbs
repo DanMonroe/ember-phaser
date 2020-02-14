@@ -2,8 +2,8 @@
   This is an Ember Phaser implementation of the <a href="https://labs.phaser.io/edit.html?src=src\physics\arcade\bullets%20group.js" target="_new"><b>Bullets Group</b></a> example from <a href="https://labs.phaser.io/index.html?dir=physics/arcade" target="_new">Phaser Labs</a>
 </p>
 
-{{#docs-demo as |demo|}}
-  {{#demo.example data-test-id="demo1.hbs"}}
+<DocsDemo as |demo|>
+  <#demo.example data-test-id="demo1.hbs">
   {{!-- BEGIN-SNIPPET demo1.hbs --}}
     <EmberPhaser
         class="board"
@@ -12,12 +12,12 @@
         @emberGame={{this.emberGameService}}
     />
   {{!-- END-SNIPPET --}}
-  {{/demo.example}}
+      </demo.example>
 
   {{demo.snippet "demo1.hbs"}}
   {{demo.snippet "component-demo1.js" label="component-demo1.js" language="javascript"}}
   {{demo.snippet "example-scene1.js" label="example-scene1.js" language="javascript"}}
   {{demo.snippet "bullet.js" label="bullet.js" language="javascript"}}
   {{demo.snippet "bullets.js" label="bullets.js" language="javascript"}}
-{{/docs-demo}}
+</DocsDemo>
 

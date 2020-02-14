@@ -13,6 +13,7 @@ Router.map(function() {
 
     this.route('usage', function() {
       this.route('demo1');
+      this.route('demo2');
     });
 
     this.route('phaser');

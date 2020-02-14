@@ -1,0 +1,19 @@
+
+<DocsDemo as |demo|>
+  <#demo.example data-test-id="demo2.hbs">
+  {{!-- BEGIN-SNIPPET demo2.hbs --}}
+    <EmberPhaser
+        class="board"
+        @phaserContainer="gameContainer"
+        @config={{this.config}}
+        @emberGame={{this.emberGameService}}
+    />
+  {{!-- END-SNIPPET --}}
+  </demo.example>
+
+  {{demo.snippet "demo2.hbs"}}
+  {{demo.snippet "component-demo2.js" label="component-demo2.js" language="javascript"}}
+  {{demo.snippet "example-scene2.js" label="example-scene2.js" language="javascript"}}
+  {{demo.snippet "service-demo2.js" label="ember-service-demo2.js" language="javascript"}}
+</DocsDemo>
+
