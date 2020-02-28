@@ -15,7 +15,7 @@ export default class Bullet extends Phaser.Physics.Arcade.Sprite {
     this.setVelocityY(-300);
 
     // Hook into Ember
-    this.scene.game.emberGame.bulletFired(this);
+    this.scene.game.ember.bulletFired(this);
   }
 
   preUpdate (time, delta) {

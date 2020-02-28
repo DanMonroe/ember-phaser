@@ -1,3 +1,7 @@
 # Installation
 
-Installation content!
+Installation is easy!
+
+```sh
+ember install ember-phaser
+```
