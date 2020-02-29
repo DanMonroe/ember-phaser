@@ -1,3 +1,4 @@
+import config from '../../../../../config/environment';
 // BEGIN-SNIPPET example-scene1.js
 import Phaser from "phaser";
 import Bullets from './bullets';
@@ -11,8 +12,8 @@ export default class ExampleScene extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('bullet', '/images/bullet7.png');
-    this.load.image('ship', '/images/bsquadron2.png');
+    this.load.image('bullet', `${config.rootURL}/images/bullet7.png`);
+    this.load.image('ship', `${config.rootURL}/images/bsquadron2.png`);
   }
 
   create () {
