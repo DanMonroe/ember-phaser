@@ -7,6 +7,11 @@ module.exports = function(defaults) {
 
     snippetExtensions: ['js','ts','coffee','html','hbs','md','css','sass','scss','less','emblem','yaml'],
 
+    fingerprint: {
+      exclude: [
+        'images'
+      ]
+    }
 
   });
 
